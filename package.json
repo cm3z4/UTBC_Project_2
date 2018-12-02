@@ -4,10 +4,7 @@
   "description": "UTBC - Project 2.",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "lint": "eslint **/*.js --quiet",
-    "fix": "eslint --fix .",
-    "test": "npm run lint && NODE_ENV=test mocha -u tdd --reporter spec --exit"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
