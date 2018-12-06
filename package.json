@@ -2,7 +2,7 @@
   "name": "scram-project-2",
   "version": "1.0.0",
   "description": "UTBC - Project 2.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },

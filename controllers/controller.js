@@ -5,14 +5,14 @@ const router = express.Router();
 const index = require("../models/index.js");
 
 // Create all our routes and set up logic within those routes where required.
-router.get("/", function (req, res) {
-  index.all(function (data) {
-    let hbsObject = {
-      index: data
-    };
-    console.log(hbsObject);
-    res.render("index", hbsObject);
-  });
+router.get("/", function(req, res) {
+    index.all(function(data) {
+        let hbsObject = {
+            index: data
+        };
+        console.log(hbsObject);
+        res.render("index", hbsObject);
+    });
 });
 // NEED TO UPDATE ???? WITH DETERMINED SCHEMA
 // router.post("/api/index", function(req, res) {
