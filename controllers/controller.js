@@ -20,5 +20,11 @@ router.get("/signup", function(req, res) {
     res.render("signup");
 });
 
+//Render Index page.
+
+router.get("/index", function(req, res) {
+    res.render("index");
+});
+
 // Export routes.
 module.exports = router;
