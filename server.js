@@ -1,34 +1,21 @@
-const express = require("express");
-const PORT = process.env.PORT || 3000;
-const app = express();
+let bodyParser = require("body-parser");
+let express = require("express");
+let path = require("path");
 
-// Serve static content for the app from the "public" directory in the application directory.
-app.use(express.static("public"));
+let app = express();
+let PORT = process.env.PORT || 3000;
 
-// parse application/x-www-form-urlencoded
-app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "./public")));
+app.use(bodyParser.urlencoded({ extended: false }));
 
-// parse application/json
-app.use(express.json());
-
-// Set Handlebars.
-const exphbs = require("express-handlebars");
-
+let exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-// Import routes and give the server access to them.
-const routes = require("./controllers/controller.js");
+let router = require("./controllers/controller.js");
+app.use("/", router);
 
-// Routes
-// =============================================================
-require("./routes/api-routes.js")(app);
-//require("./routes/html-routes.js")(app);
-app.use(require("./routes/html-routes"));
-// Syncing our sequelize models and then starting our Express app
-// =============================================================
-//db.sequelize.sync({ force: true }).then(function () {
-    app.listen(PORT, function () {
-         console.log("App listening on PORT " + PORT);
-    });
-//});
+// Application is listening...
+app.listen(PORT, function() {
+    console.log("Application is listening on PORT " + PORT + ".");
+});

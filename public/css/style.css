@@ -1,0 +1,22 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+.loginCont, #login {
+    width: 100%;
+    margin-top: 10%;
+}
+
+.siteTitle {
+    font-family: 'Pacifico', cursive;
+    font-size: 135%;
+}
+
+h2, h6 {
+    text-align: center;
+}
+
+.btn {
+    float: right;
+}
