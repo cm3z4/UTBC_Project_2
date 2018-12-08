@@ -9,17 +9,17 @@
                 <h6><a href="login">Already have an account? Log In</a></h6>
                 <br>
                 <br>
-                <form>
+                <form action="users/createUser" method="POST">
                     <div class="form-group">
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        <input name="emailInput" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                             placeholder="Enter email">
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with
                             anyone else.</small>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <input name="passInput" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                     </div>
-                    <button type="submit" class="btn btn-outline-primary">Create Account</button>
+                    <button type="submit" class="btn btn-outline-primary" id="create">Create Account</button>
                 </form>
             </div>
             <div class="col-md-2 col-lg-3">

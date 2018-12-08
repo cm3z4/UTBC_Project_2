@@ -1,8 +1,14 @@
 {
   "development": {
+<<<<<<< Updated upstream
     "username": "root",
     "password": "Soha2008@",
     "database": "gitshopping_db",
+=======
+    "username": "cm3z4",
+    "password": "badbeansoup",
+    "database": "things4sale_db",
+>>>>>>> Stashed changes
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
