@@ -1,8 +1,12 @@
-html {
+
+/* This is the main.handlebars body CSS. */
+#mainBody {
     background-color: black;
     color: white;
 }
+/* This is the end of the main.handlebars block. */
 
+/* This block of code is for the login.handlebars/signup.handlebars files. */
 .loginCont, #login {
     width: 100%;
     margin-top: 10%;
@@ -13,11 +17,11 @@ html {
     font-size: 135%;
 }
 
-h2, h6 {
+.logAndSign {
     text-align: center;
 }
 
-.btn {
+#signupBtn, #loginBtn {
     float: right;
 }
-
+/* End of the login/signup block. */
