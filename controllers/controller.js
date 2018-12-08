@@ -42,12 +42,11 @@ router.get("/signup", function(req, res) {
     res.render("signup");
 });
 
-<<<<<<< Updated upstream
-//Render Index page.
-
+// Render index page.
 router.get("/index", function(req, res) {
     res.render("index");
-=======
+});
+
 // Create a new user.
 router.post("/users/createUser", function(req, res) {
     let encryptedPass = encrypt(req.body.passInput);
@@ -93,7 +92,6 @@ router.post("/users/authUser", function(req, res) {
         .then(function() {
             res.redirect("/login");
         }); */
->>>>>>> Stashed changes
 });
 
 // Export routes.
