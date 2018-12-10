@@ -1,5 +1,3 @@
-### Schema
-
 CREATE DATABASE things4sale_db;
 USE things4sale_db;
 

@@ -3846,26 +3846,44 @@
 
 /* index.handlebars block. */
 
-@import url("https://fonts.googleapis.com/css?family=Calligraffitti|Mali");
 /* GENERAL STYLES */
+
 :root {
   --mainYellow: #fdbe02;
   --mainWhite: #fff;
   --mainBlack: #071013;
   --mainGrey: #9b9999;
+  --mainTeal: #008080;
   --TransGrey: rgba(0, 0, 0, 0.1);
 }
 body {
   color: var(--mainBlack);
   background: var(--mainWhite);
-  font-family: "Mali", cursive;
+  font-family: "Montserrat", sans-serif;
 }
 .text-yellow {
   color: var(--mainYellow);
 }
+#logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 3rem;
+}
+
+/* button */
 .btn-yellow {
   background: var(--mainYellow);
-  text-transform: capitalize;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  color: var(--mainBlack);
+  border-radius: 0 !important;
+}
+.btn-yellow:hover {
+  background: var(--mainBlack);
+  color: var(--mainYellow);
+}
+.btn-yellow {
+  background: var(--mainYellow);
+  text-transform: uppercase;
   font-size: 1.2rem;
   color: var(--mainBlack);
   border-radius: 0 !important;
@@ -3876,7 +3894,7 @@ body {
 }
 .btn-black {
   background: transparent;
-  text-transform: capitalize;
+  text-transform: uppercase;
   font-size: 1.2rem;
   color: var(--mainBlack);
   border-radius: 0 !important;
@@ -3886,55 +3904,38 @@ body {
   background: var(--mainBlack);
   color: var(--mainWhite);
 }
-/********************** HOME PAGE ******************************/
 
-/* home banner */
-.banner {
-  min-height: calc(100vh - 101px);
-  background: url("../img/pageBcg/bannerBcg.jpeg");
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+/********************** HOME PAGE **********************/
+
+.navbar {
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 0 8px 6px -6px #999;
 }
-/* IN GENERAL STYLES */
-.btn-yellow {
+
+/* top banner */
+.top-banner {
+  min-height: 40vh;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("../img/pageBcg/homeBcg.jpg") center/cover fixed no-repeat;
+}
+
+/* shop by categories */
+.products-categories-underline {
+  height: 0.2rem;
+  width: 5rem;
   background: var(--mainYellow);
-  text-transform: capitalize;
-  font-size: 1.2rem;
+}
+.products-categories-links {
   color: var(--mainBlack);
-  border-radius: 0 !important;
+  text-decoration: none !important;
 }
-.btn-yellow:hover {
-  background: var(--mainBlack);
-  color: var(--mainYellow);
+.products-categories-links:hover {
+  color: var(--mainGrey);
 }
-/*  */
-.banner-products,
-.banner-single-product,
-.banner-store {
-  min-height: 60vh;
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
-    ),
-    url("../img/pageBcg/productsBcg.jpeg") center/cover fixed no-repeat;
-}
-.banner-single-product {
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
-    ),
-    url("../img/pageBcg/singleBcg.jpeg") center/cover fixed no-repeat;
-}
-.banner-store {
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
-    ),
-    url("../img/pageBcg/storeBcg.jpeg") center/cover fixed no-repeat;
-}
-/* services */
 .service-icon {
   display: inline-block;
   font-size: 2rem;
@@ -3944,7 +3945,6 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 50%;
 }
-/* categories */
 .categories-link {
   color: var(--mainBlack);
   text-decoration: none !important;
@@ -3957,54 +3957,8 @@ body {
   width: 5rem;
   background: var(--mainYellow);
 }
-.category-container {
-  position: relative;
-}
-.category-img {
-  transition: all 1s linear;
-}
-.category-container:hover .category-img {
-  opacity: 0.5;
-}
-.category-link {
-  position: absolute;
-  bottom: 0%;
-  left: 0%;
-  padding: 0.2rem 3rem 0.2rem 0.2rem;
-  background: var(--mainWhite);
-  color: var(--mainBlack);
-  clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%);
-  opacity: 0;
-  transition: all 1s linear;
-  text-decoration: none !important;
-}
-.category-link:hover {
-  color: var(--mainGrey);
-}
 
-.category-container:hover .category-link {
-  opacity: 1;
-}
-/* home filler */
-.home-filler {
-  min-height: 60vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../img/home-filler.jpeg") center/cover fixed no-repeat;
-}
-.collection-link {
-  color: var(--mainYellow);
-  text-decoration: none !important;
-}
-.collection-link:hover {
-  color: var(--mainGrey);
-}
-.collection-underline {
-  height: 0.1rem;
-  width: 5rem;
-  background: var(--mainYellow);
-  margin: 0 auto;
-}
-/* featured section */
+/* featured listings */
 .featured-container {
   background: var(--TransGrey);
   position: relative;
@@ -4022,36 +3976,22 @@ body {
   transition: all 1s ease-in-out;
   cursor: pointer;
 }
-.featured-store-link {
-  background: var(--mainYellow);
-  color: var(--mainBlack);
-  padding: 0.2rem 0.4rem;
-  position: absolute;
-  right: 0;
-  top: 70%;
-  transform: translateX(110%);
-  transition: all 2s ease-in-out;
-}
 .featured-container:hover .featured-search-icon {
   transform: translateX(0);
 }
-.old-price {
-  text-decoration: line-through;
-}
-/* grey section */
-.grey {
-  background: var(--TransGrey);
+
+/********************** bottom of page **********************/
+
+/* bottom banner */
+.bottom-banner {
+  min-height: 40vh;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("../img/pageBcg/homeBcg.jpg") center/cover fixed no-repeat;
 }
 
-/* newsletter */
-.form-icon {
-  background: var(--mainGrey);
-  color: var(--mainBlack);
-}
-/* skills */
-.blackbanner {
-  background: var(--mainBlack);
-}
 /* footer */
 .footer {
   background: rgba(0, 0, 0, 0.8);
@@ -4066,62 +4006,10 @@ body {
 .footer-icon:hover {
   color: var(--mainWhite);
 }
-/* ***********END OF HOME PAGE *********************** */
-/* ************** PRODUCTS PAGE ************************** */
-.products-categories-underline {
-  height: 0.2rem;
-  width: 5rem;
-  background: var(--mainYellow);
-}
-.products-categories-links {
-  color: var(--mainBlack);
-  text-decoration: none !important;
-}
-.products-categories-links:hover {
-  color: var(--mainGrey);
-}
 
-.products-color {
-  width: 1rem;
-  height: 1rem;
-}
-.products-color-black {
-  background: black;
-}
-.products-color-red {
-  background: red;
-}
-.products-color-blue {
-  background: blue;
-}
-.products-color-yellow {
-  background: yellow;
-}
-.products-color-green {
-  background: green;
-}
-/* ************** END OF PRODUCTS PAGE ************************** */
-/* **************  SINGLE PRODUCT PAGE ************************** */
-.single-product-photo {
-  background: var(--TransGrey);
-  opacity: 0.5;
-  transition: all 0.5s linear;
-  cursor: pointer;
-  border: 0.1rem solid transparent;
-  box-sizing: border-box !important;
-}
-.single-product-photo:hover {
-  border: 0.1rem solid var(--mainYellow);
-  opacity: 1;
-}
-.rating-icon {
-  color: var(--mainYellow);
-}
-.product-info-link {
-  color: var(--mainGrey);
-  text-decoration: none !important;
-}
-.product-info-link:hover {
-  color: var(--mainYellow);
-}
+/********************** END OF HOME PAGE **********************/
+
+/********************** ITEM INFO MODAL **********************/
+
+
 /* End of index.handlebars block. */
