@@ -24,6 +24,10 @@
 #signupBtn, #loginBtn {
     float: right;
 }
+
+#createAcount {
+  margin-top: 4%;
+}
 /* End of the login/signup block. */
 
 /* Font Awesome block */
