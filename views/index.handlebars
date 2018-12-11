@@ -56,7 +56,7 @@
 
           <!-- create listing -->
           <div class="products-categories-title mt-4 mb-4">
-            <span class="btn btn-yellow" data-toggle="modal" data-target="#createNewListing">Create New Listing</span>
+            <span class="btn btn-yellow" data-target="#createNewListing">Create New Listing</span>
           </div>
 
           <!-- remove listing -->
@@ -215,67 +215,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- Modal for create new listings -->
-  <div class="modal fade" id="createNewListing" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h5 class="modal-title text-capitalize">Create new listing</h5>
-          <button type="button" class="close" data-dismiss="modal">
-            <span aria-hidden="true">&times;</span>
-            <span class="sr-only">Close</span>
-          </button>
-        </div>
-
-        <!-- Modal Body -->
-        <div class="modal-body">
-          <form action="users/createUser" method="POST">
-            <div class="form-group">
-              <input type="text" class="form-control" id="validationDefault03" placeholder="Item name" required>
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" id="validationDefault03" placeholder="Asking price" required>
-            </div>
-            <div class="form-group">
-              <textarea class="form-control" id="exampleTextarea" placeholder="Item description" rows="3"></textarea>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group col-md-6 mb-2">
-                <input type="text" class="form-control" id="validationDefault01" placeholder="First name" value="First name" required>
-              </div>
-              <div class="form group col-md-6 mb-2">
-                <input type="text" class="form-control" id="validationDefault02" placeholder="Last name" value="Last name" required>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-            </div>
-            <div class="form-group">
-              <input class="form-control" type="tel" value="Phone number" id="example-tel-input">
-            </div>
-            <div class="form-group">
-              <input type="file" class="form-control-file" id="imageUpload" aria-describedby="fileHelp">
-              <small id="fileHelp" class="form-text text-muted">Upload an image of your product!</small>
-            </div>
-          </form>
-
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-primary">
-              Submit
-            </button>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-  </div>
 
   <!-- Modal for featured listings -->
   <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
