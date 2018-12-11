@@ -1,0 +1,47 @@
+<div class="container-fluid" id="mainCont">
+    <div class="container" id="loginCont">
+        <div class="row align-items-center" id="login">
+            <div class="col-md-2 col-lg-3">
+                <!-- Placeholder.-->
+            </div>
+            <div class="col-12 col-sm-12 col-md-8 col-lg-6">
+                <form ref='uploadForm' id='uploadForm' action='upload' method='post' encType="multipart/form-data">
+                    <div class="form-group">
+                        <label for="titleFormControlInput">Title for listing</label>
+                        <input type="text" class="form-control" id="titleFormControlInput">
+                    </div>
+                    <div class="form-group">
+                        <label for="priceFormControlInput">Asking price</label>
+                        <input type="text" class="form-control" id="priceFormControlInput">
+                    </div>
+                    <div class="form-group">
+                        <label for="categoryFormControlSelect">Select a category</label>
+                        <select class="form-control" id="categoryFormControlSelect">
+                            <option>--Select--</option>
+                            <option>Auto</option>
+                            <option>Books</option>
+                            <option>Furniture</option>
+                            <option>Electronics</option>
+                            <option>Instruments</option>
+                            <option>Appliances</option>
+                            <option>Jewelry</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="infoFormControlTextarea">Enter item description</label>
+                        <textarea class="form-control" id="infoFormControlTextarea" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="uploadFormControlFile">Upload an image</label>
+                        <input type="file" class="form-control-file" id="uploadFormControlFile" name="sampleFile">
+                    </div>
+                    <button type="submit" class="btn btn-outline-primary" id="loginBtn" value='Upload!'>Post Item</button>
+                </form>
+            </div>
+            <div class="col-md-2 col-lg-3">
+                <!-- Placeholder.-->
+            </div>
+        </div>
+    </div>
+</div>
+</div>
