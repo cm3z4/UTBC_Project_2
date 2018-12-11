@@ -101,5 +101,10 @@ router.post("/users/authUser", function(req, res) {
         });
 });
 
+// Create a new listing.
+router.get("/create", function(req, res) {
+    res.render("create");
+});
+
 // Export routes.
 module.exports = router;
