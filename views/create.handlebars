@@ -12,28 +12,32 @@
                 <form ref='uploadForm' id='uploadForm' action='upload' method='post' encType="multipart/form-data">
                     <div class="form-group">
                         <label for="titleFormControlInput">Title for listing</label>
-                        <input type="text" class="form-control" id="titleFormControlInput">
+                        <input name="titleInput" type="text" class="form-control" id="titleFormControlInput">
                     </div>
                     <div class="form-group">
                         <label for="priceFormControlInput">Asking price</label>
-                        <input type="text" class="form-control" id="priceFormControlInput">
+                        <input name="priceInput" type="text" class="form-control" id="priceFormControlInput">
                     </div>
                     <div class="form-group">
                         <label for="categoryFormControlSelect">Select a category</label>
-                        <select class="form-control" id="categoryFormControlSelect">
+                        <select name="categoryInput" class="form-control" id="categoryFormControlSelect">
                             <option>--Select--</option>
                             <option>Auto</option>
                             <option>Books</option>
-                            <option>Furniture</option>
                             <option>Electronics</option>
+                            <option>Furniture</option>
                             <option>Instruments</option>
-                            <option>Appliances</option>
                             <option>Jewelry</option>
+                            <option>Toys</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="infoFormControlTextarea">Enter item description</label>
-                        <textarea class="form-control" id="infoFormControlTextarea" rows="3"></textarea>
+                        <textarea name="infoInput" class="form-control" id="infoFormControlTextarea" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="zipFormControlInput">Zip code</label>
+                        <input name="zipInput" type="text" class="form-control" id="zipFormControlInput">
                     </div>
                     <div class="form-group">
                         <label for="uploadFormControlFile">Upload an image</label>

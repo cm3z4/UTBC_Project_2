@@ -3847,8 +3847,8 @@
 
 /* index.handlebars block. */
 
-/* GENERAL STYLES */
 
+/* GENERAL STYLES */
 :root {
   --mainYellow: #fdbe02;
   --mainWhite: #fff;
@@ -3864,10 +3864,6 @@ body {
 }
 .text-yellow {
   color: var(--mainYellow);
-}
-#logo {
-  font-family: 'Pacifico', cursive;
-  font-size: 3rem;
 }
 
 /* button */
@@ -3909,9 +3905,20 @@ body {
 /********************** HOME PAGE **********************/
 
 .navbar {
-  -webkit-box-shadow: 0 8px 6px -6px #999;
-  -moz-box-shadow: 0 8px 6px -6px #999;
-  box-shadow: 0 8px 6px -6px #999;
+  -webkit-box-shadow: 0 8px 6px -8px #999;
+  -moz-box-shadow: 0 8px 6px -8px #999;
+  box-shadow: 0 8px 6px -8px #999;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+#logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 5rem;
+  color: var(--mainTeal);
+  display: table;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* top banner */
@@ -3985,24 +3992,38 @@ body {
 
 /* bottom banner */
 .bottom-banner {
-  min-height: 40vh;
+  min-height: 30vh;
   background: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.5)
     ),
     url("../img/pageBcg/homeBcg.jpg") center/cover fixed no-repeat;
 }
-
+  
 /* footer */
 .footer {
   background: rgba(0, 0, 0, 0.8);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
-.footer-title {
-  border: 0.2rem solid var(--mainYellow);
-  padding: 0.4rem;
+.footer_container {
+  display: table;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+#footer-logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 3.5rem;
+  color: var(--mainWhite);
+  padding-bottom: 10px;
+}
+#scramLogo {
+  color: var(--mainYellow);
 }
 .footer-icon {
   color: var(--mainYellow);
+  font-size: 1.5rem;
 }
 .footer-icon:hover {
   color: var(--mainWhite);
@@ -4010,7 +4031,33 @@ body {
 
 /********************** END OF HOME PAGE **********************/
 
-/********************** ITEM INFO MODAL **********************/
+/* media queries */
 
+   
+/**************
+    640px
+***************/
+@media screen and (max-width: 640px) {
+  #logo {
+    width: 400px;
+  }
+  #footer-logo {
+    width: 150px;
+    vertical-align: middle;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  #concert-logo {
+    width: 300px;
+  }
+}
+
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
 /* End of index.handlebars block. */
