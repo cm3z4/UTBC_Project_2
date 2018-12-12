@@ -2,20 +2,20 @@ const express = require("express");
 const models = require("../models");
 const router = express.Router();
 const fileUpload = require("../lib/index.js");
+require("dotenv").config();
 
 let connection = models.sequelize;
 connection.sync();
 
 // Encrypts the user's password.
-require("dotenv").config();
+
 let crypto = require("crypto"),
     algorithm = "aes-256-ctr";
 
 let key = process.env.encrypt_key;
-console.log(key + typeof key);
 
 function encrypt(text) {
-    let cipher = crypto.createCipher(algorithm, "asdfghjkl");
+    let cipher = crypto.createCipher(algorithm, { string: key });
     let crypted = cipher.update(text, "utf8", "hex");
     crypted += cipher.final("hex");
     return crypted;
