@@ -2,7 +2,6 @@ const express = require("express");
 const models = require("../models");
 const router = express.Router();
 const fileUpload = require("../lib/index.js");
-require("dotenv").config();
 
 let connection = models.sequelize;
 connection.sync();
@@ -10,12 +9,11 @@ connection.sync();
 // Encrypts the user's password.
 
 let crypto = require("crypto"),
-    algorithm = "aes-256-ctr";
-
-let key = process.env.encrypt_key;
+    algorithm = "aes-256-ctr",
+    key = "d6F3Efeq!pkHeji65$iok";
 
 function encrypt(text) {
-    let cipher = crypto.createCipher(algorithm, { string: key });
+    let cipher = crypto.createCipher(algorithm, key);
     let crypted = cipher.update(text, "utf8", "hex");
     crypted += cipher.final("hex");
     return crypted;
