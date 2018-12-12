@@ -12,7 +12,7 @@ let crypto = require("crypto"),
     algorithm = "aes-256-ctr";
 
 function encrypt(text) {
-    let cipher = crypto.createCipher(algorithm, process.env.encrypt_key);
+    let cipher = crypto.createCipher(algorithm, "asdfghjkl");
     let crypted = cipher.update(text, "utf8", "hex");
     crypted += cipher.final("hex");
     return crypted;
