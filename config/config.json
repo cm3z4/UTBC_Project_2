@@ -1,7 +1,11 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": "Soha2008@",
+=======
+    "password": "root",
+>>>>>>> d4437fabde00cbe24dab2ff34dbb1f8abdecb1fe
     "database": "things4sale_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
