@@ -83,6 +83,7 @@ router.post("/users/authUser", function(req, res) {
             where: { user: req.body.emailInput1 }
         })
         .then(function(data) {
+            console.log(data);
             let userEmail = data.dataValues.user;
             if (userEmail === req.body.emailInput1) {
                 console.log("That user exists!");
