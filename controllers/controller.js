@@ -9,11 +9,10 @@ connection.sync();
 // Encrypts the user's password.
 require("dotenv").config();
 let crypto = require("crypto"),
-    algorithm = "aes-256-ctr",
-    key = process.env.encrypt_key;
+    algorithm = "aes-256-ctr";
 
 function encrypt(text) {
-    let cipher = crypto.createCipher(algorithm, key);
+    let cipher = crypto.createCipher(algorithm, process.env.encrypt_key);
     let crypted = cipher.update(text, "utf8", "hex");
     crypted += cipher.final("hex");
     return crypted;
