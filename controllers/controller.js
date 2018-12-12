@@ -7,15 +7,13 @@ let connection = models.sequelize;
 connection.sync();
 
 // Encrypts the user's password.
-require("dotenv").config();
-let crypto = require("crypto"),
-    algorithm = "aes-256-ctr";
 
-let key = process.env.encrypt_key;
-console.log(key + typeof key);
+let crypto = require("crypto"),
+    algorithm = "aes-256-ctr",
+    key = "d6F3Efeq!pkHeji65$iok";
 
 function encrypt(text) {
-    let cipher = crypto.createCipher(algorithm, "asdfghjkl");
+    let cipher = crypto.createCipher(algorithm, key);
     let crypted = cipher.update(text, "utf8", "hex");
     crypted += cipher.final("hex");
     return crypted;
@@ -40,7 +38,17 @@ router.get("/signup", function(req, res) {
 let userAuthenticated = false;
 router.get("/index", function(req, res) {
     if (userAuthenticated === true) {
-        res.render("index");
+        models.items
+            .findAll({
+                // blah, blah, blah...
+            })
+            .then(function(data) {
+                let hbsObject = { items: data };
+                res.render("index", hbsObject);
+            })
+            .catch(function(err) {
+                console.log(err);
+            });
     } else {
         res.redirect("/login");
     }
@@ -125,7 +133,7 @@ router.post("/upload", function(req, res) {
 
         let sampleFile = req.files.sampleFile;
         // Use the mv() method to place the file somewhere on your server
-        sampleFile.mv("./uploads/" + imageId + ".jpg", function(err) {
+        sampleFile.mv("./public/uploads/" + imageId + ".jpg", function(err) {
             if (err) {
                 return res.status(500).send(err);
             }
@@ -152,7 +160,7 @@ router.post("/upload", function(req, res) {
                 category: req.body.categoryInput,
                 info: req.body.infoInput,
                 zipCode: req.body.zipInput,
-                imageUrl: "./uploads/" + imageId + ".jpg"
+                imageUrl: "uploads/" + imageId + ".jpg"
             })
             .then(function() {
                 console.log("Info added to database!");
