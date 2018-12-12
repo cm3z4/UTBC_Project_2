@@ -68,31 +68,33 @@
       <!-- end of product info -->
       <!-- products  -->
       <div class="col-10 mx-auto col-md-7 col-lg-9 my-3">
-        <div class="row">
+        <div class="row p-3 justify-content-center">
 
-          <div class=" col-md-6 col-lg-4 mx-auto my-3">
-            <div>
-              {{#each items}}
-              <div class="featured-container p-5">
-                <img src="{{imageUrl}}" class="img-fluid" alt="">
-                <span class="featured-search-icon" data-toggle="modal" data-target="#productModal">
-                  <i class="fas fa-search"></i>
-                </span>
-              </div>
-              <h6 class="text-capitalize text-center my-2">{{info}}</h6>
-              <h6 class="text-center">{{price}}</h6>
+          {{#each items}}
 
+          <div class="card shadow m-3" style="width: 300px;">
+            <img class="card-img-top" src="{{imageUrl}}" alt="image">
+            <span class="featured-search-icon" data-toggle="modal" data-target="#productModal">
+              <i class="fas fa-search"></i>
+            </span>
+            <div class="card-body">
+              <h5 class="card-title">{{title}}</h5>
+              <p class="card-text">{{info}}</p>
+              <p class="card-text">{{price}}</p>
             </div>
-
-            {{/each}}
           </div>
-        </div>
-      </div>
-      <!-- end of products  -->
 
+          {{/each}}
+
+        </div>
+        <!-- end of products  -->
+
+      </div>
     </div>
   </div>
+
 </section>
+
 <!-- end of products -->
 
 <!-- bottom banner -->
