@@ -23,6 +23,7 @@
 
 #signupBtn, #loginBtn {
     float: right;
+    text-decoration-color: #071013;
 }
 
 #createAcount {
