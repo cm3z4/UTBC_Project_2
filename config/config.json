@@ -1,21 +1,21 @@
 {
   "development": {
     "username": "root",
-    "password": "Soha2008@",
+    "password": null,
     "database": "things4sale_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "Soha2008@",
+    "password": null,
     "database": "things4sale_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
-    "password": "Soha2008@",
+    "password": null,
     "database": "things4sale_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
