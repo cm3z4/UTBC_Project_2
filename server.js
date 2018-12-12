@@ -4,6 +4,9 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Requiring our models for syncing
+const db = require("./models");
+
 app.use(express.static(path.join(__dirname, "./public")));
 app.use(express.urlencoded({ extended: false }));
 
@@ -15,6 +18,8 @@ const router = require("./controllers/controller.js");
 app.use("/", router);
 
 // Application is listening...
-app.listen(PORT, function() {
-    console.log("Application is listening on PORT " + PORT + ".");
+db.sequelize.sync().then(function () {
+    app.listen(PORT, function () {
+        console.log("Application is listening on PORT " + PORT + ".");
+    });
 });
