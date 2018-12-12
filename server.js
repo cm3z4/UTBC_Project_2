@@ -17,9 +17,6 @@ app.set("view engine", "handlebars");
 const router = require("./controllers/controller.js");
 app.use("/", router);
 
-// Require routing files.
-require("./routing/apiRoutes.js")(app);
-
 // Application is listening...
 db.sequelize.sync().then(function () {
     app.listen(PORT, function () {
