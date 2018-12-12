@@ -14,9 +14,6 @@ app.set("view engine", "handlebars");
 const router = require("./controllers/controller.js");
 app.use("/", router);
 
-// Require routing files.
-require("./routing/apiRoutes.js")(app);
-
 // Application is listening...
 app.listen(PORT, function() {
     console.log("Application is listening on PORT " + PORT + ".");

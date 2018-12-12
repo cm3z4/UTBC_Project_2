@@ -1,6 +1,7 @@
 const express = require("express");
 const models = require("../models");
 const router = express.Router();
+const fileUpload = require("../lib/index.js");
 
 let connection = models.sequelize;
 connection.sync();
@@ -75,6 +76,7 @@ router.post("/users/createUser", function(req, res) {
     }
 });
 
+let authUserEmail = "";
 router.post("/users/authUser", function(req, res) {
     models.users
         .findOne({
@@ -87,6 +89,7 @@ router.post("/users/authUser", function(req, res) {
 
                 if (encrypt(req.body.passInput1) === data.dataValues.pass) {
                     userAuthenticated = true;
+                    authUserEmail = req.body.emailInput1;
                     res.redirect("/index");
                 } else {
                     console.log("The password the user entered is incorrect.");
@@ -101,9 +104,63 @@ router.post("/users/authUser", function(req, res) {
         });
 });
 
-// Create a new listing.
+// Render the create item page.
 router.get("/create", function(req, res) {
     res.render("create");
+});
+
+// Upload the item's picture to the server.
+router.use(fileUpload());
+router.post("/upload", function(req, res) {
+    let imageId = "0000000000";
+
+    if (Object.keys(req.files).length === 0) {
+        console.log("No file was uploaded.");
+    } else {
+        // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+        imageId = Math.floor(Math.random() * 1000000000).toString();
+
+        let sampleFile = req.files.sampleFile;
+        // Use the mv() method to place the file somewhere on your server
+        sampleFile.mv("./uploads/" + imageId + ".jpg", function(err) {
+            if (err) {
+                return res.status(500).send(err);
+            }
+            console.log("File uploaded!");
+        });
+    }
+
+    if (
+        req.body.titleInput === "" ||
+        req.body.priceInput === "" ||
+        req.body.categoryInput === "" ||
+        req.body.infoInput === "" ||
+        req.body.zipInput === ""
+    ) {
+        console.log("Not all fields have input, try again!");
+        res.redirect("/create");
+    } else {
+        // Add the item's info into the database.
+        models.items
+            .create({
+                user: authUserEmail,
+                title: req.body.titleInput,
+                price: req.body.priceInput,
+                category: req.body.categoryInput,
+                info: req.body.infoInput,
+                zipCode: req.body.zipInput,
+                imageUrl: "./uploads/" + imageId + ".jpg"
+            })
+            .then(function() {
+                console.log("Info added to database!");
+                res.redirect("/index");
+            })
+            .catch(function(err) {
+                console.log(err);
+                console.log("I don't know what went wrong...");
+                res.redirect("/index");
+            });
+    }
 });
 
 // Export routes.
