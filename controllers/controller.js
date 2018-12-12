@@ -11,6 +11,9 @@ require("dotenv").config();
 let crypto = require("crypto"),
     algorithm = "aes-256-ctr";
 
+let key = process.env.encrypt_key;
+console.log(key + typeof key);
+
 function encrypt(text) {
     let cipher = crypto.createCipher(algorithm, "asdfghjkl");
     let crypted = cipher.update(text, "utf8", "hex");
