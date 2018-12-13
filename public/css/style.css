@@ -3847,7 +3847,7 @@
 
 /* index.handlebars block. */
 
-
+/* INDEX STYLES */
 /* GENERAL STYLES */
 :root {
   --mainYellow: #fdbe02;
@@ -3872,34 +3872,19 @@ body {
   text-transform: uppercase;
   font-size: 1.2rem;
   color: var(--mainBlack);
-  border-radius: 0 !important;
+  border-radius: 15px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
 }
 .btn-yellow:hover {
-  background: var(--mainBlack);
-  color: var(--mainYellow);
-}
-.btn-yellow {
-  background: var(--mainYellow);
-  text-transform: uppercase;
-  font-size: 1.2rem;
-  color: var(--mainBlack);
-  border-radius: 0 !important;
-}
-.btn-yellow:hover {
-  background: var(--mainBlack);
-  color: var(--mainYellow);
-}
-.btn-black {
-  background: transparent;
-  text-transform: uppercase;
-  font-size: 1.2rem;
-  color: var(--mainBlack);
-  border-radius: 0 !important;
-  border: 0.1rem solid var(--mainBlack);
-}
-.btn-black:hover {
   background: var(--mainBlack);
   color: var(--mainWhite);
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
 }
 
 /********************** HOME PAGE **********************/
@@ -3913,12 +3898,13 @@ body {
 }
 #logo {
   font-family: 'Pacifico', cursive;
-  font-size: 5rem;
+  font-size: 5.5rem;
   color: var(--mainTeal);
   display: table;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  text-shadow: 0 8px 6px rgb(216, 215, 215);
 }
 
 /* top banner */
@@ -4039,25 +4025,26 @@ body {
 ***************/
 @media screen and (max-width: 640px) {
   #logo {
-    width: 400px;
+    font-size: 4rem;
   }
   #footer-logo {
-    width: 150px;
-    vertical-align: middle;
+    font-size: 3rem;
   }
 }
 
-@media screen and (max-width: 420px) {
-  #concert-logo {
-    width: 300px;
+@media screen and (max-width: 320px) {
+  #logo {
+    font-size: 3.5rem;
+  }
+  #footer-logo {
+    font-size: 3rem;
   }
 }
-
-
+/* 
 .clearfix:after {
   content: "";
   display: table;
   clear: both;
-}
+} */
 
 /* End of index.handlebars block. */
