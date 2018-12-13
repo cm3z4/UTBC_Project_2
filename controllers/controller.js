@@ -35,7 +35,7 @@ router.get("/signup", function(req, res) {
 });
 
 // Renders the index page if the user has been authenticated.
-let userAuthenticated = false;
+/*let userAuthenticated = false;
 router.get("/index", function(req, res) {
     if (userAuthenticated === true) {
         models.items
@@ -51,6 +51,43 @@ router.get("/index", function(req, res) {
             });
     } else {
         res.redirect("/login");
+    }
+});*/
+
+// Renders the filter page if the user has been authenticated.
+let userAuthenticated = false;
+router.get("/index/:id", function(req, res) {
+    let type = req.params.id;
+    console.log(req.params.id);
+    if (type === "Main") {
+        if (userAuthenticated === true) {
+            models.items
+                .findAll({
+                    // blah, blah, blah...
+                })
+                .then(function(data) {
+                    let hbsObject = { items: data };
+                    res.render("index", hbsObject);
+                })
+                .catch(function(err) {
+                    console.log(err);
+                });
+        } else {
+            res.redirect("/login");
+        }
+    } else {
+        let filter = { where: { category: type } };
+        if (userAuthenticated === true) {
+            models.items
+                .findAll(filter)
+                .then(function(data) {
+                    let hbsObject = { items: data };
+                    res.render("index", hbsObject);
+                })
+                .catch(function(err) {
+                    console.log(err);
+                });
+        }
     }
 });
 
@@ -101,7 +138,7 @@ router.post("/users/authUser", function(req, res) {
                 if (encrypt(req.body.passInput1) === data.dataValues.pass) {
                     userAuthenticated = true;
                     authUserEmail = req.body.emailInput1;
-                    res.redirect("/index");
+                    res.redirect("/index/Main");
                 } else {
                     console.log("The password the user entered is incorrect.");
                     res.redirect("/login");
