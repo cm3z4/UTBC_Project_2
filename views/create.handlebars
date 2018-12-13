@@ -1,15 +1,15 @@
-<div class="top-banner d-flex align-items-center justify-content-left pl-3 pl-lg-5">
-<div class="form-group">
-<h2 class="logAndSign">Create New Listing</span></h2>
-</div>
-<div class="container-fluid" id="mainCont">
+<body class="top-banner">
+  <div class="container-fluid" id="mainCont">
     <div class="container" id="loginCont">
-        <div class="row align-items-center" id="login">
-            <div class="col-md-2 col-lg-3">
-                <!-- Placeholder.-->
-            </div>
-            <div class="col-12 col-sm-12 col-md-8 col-lg-6">
+      <div class="row align-items-center">
+        {{!--
+        <div class="col-md-2 col-lg-3">
+          <!-- Placeholder.-->
+        </div> --}}
+        
+           <div class="form-group col-sm-12 col-md-8 col-lg-6" id="formStyle">
                 <form ref='uploadForm' id='uploadForm' action='upload' method='post' encType="multipart/form-data">
+                <h2 class="logAndSign">Create New Listing</span></h2><hr>
                     <div class="form-group">
                         <label for="titleFormControlInput">Title for listing</label>
                         <input name="titleInput" type="text" class="form-control" id="titleFormControlInput">
@@ -44,16 +44,19 @@
                         <label for="uploadFormControlFile">Upload an image</label>
                         <input type="file" class="form-control-file" id="uploadFormControlFile" name="sampleFile">
                     </div>
-                    <button type="submit" class="btn btn-outline-primary" id="loginBtn" value='Upload!'>Post Item</button>
+                    <button type="submit" class="btn" id="loginBtn" value='Upload!'>Post Item</button>
                 </form>
             </div>
-            <div class="col-md-2 col-lg-3">
-                <!-- Placeholder.-->
-            </div>
-        </div>
+      
+        {{!--
+        <div class="col-md-2 col-lg-3">
+          <!-- Placeholder.-->
+        </div> --}}
+      </div>
     </div>
-</div>
-</div>
+  </div>
+</body>
+{{!--
 </div>
 <div class="bottom-banner">
-</div>
+</div> --}}

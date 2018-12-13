@@ -1,38 +1,33 @@
-<div class="top-banner d-flex align-items-center justify-content-left pl-3 pl-lg-5">
-<div class="container-fluid" id="mainCont">
+<body class="top-banner">
+  <div class="container-fluid" id="mainCont">
     <div class="container" id="loginCont">
-        <div class="row align-items-center" id="login">
-            <div class="col-md-2 col-lg-3">
-                <!-- Placeholder.-->
+      <div class="row align-items-center" id="login">
+        {{!-- <div class="col-md-2 col-lg-3">
+          <!-- Placeholder.-->
+        </div> --}}
+        <div class="col-sm-12 col-md-8 col-lg-6" id="formStyle">
+          <h2 class="logAndSign">Create Account</h2>
+          <h6 class="logAndSign">Hello! Sign up to see all the great deals on <span class="siteTitle">Things4Sale</span>.</h6>
+          <br>
+          <br>
+          <form action="users/createUser" method="POST">
+            <div class="form-group">
+              <input name="emailInput" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
-            <div class="col-12 col-sm-12 col-md-8 col-lg-6">
-                <h2 class="logAndSign">Create Account</h2>
-                <h6 class="logAndSign">Hello! Sign up to see all the great deals on <span class="siteTitle">Things4Sale</span>.</h6>
-                <br>
-                <br>
-                <form action="users/createUser" method="POST">
-                    <div class="form-group">
-                        <input name="emailInput" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                            placeholder="Email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with
-                            anyone else.</small>
-                    </div>
-                    <div class="form-group">
-                        <input name="passInput" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                    </div>
-                    <br>
-                    <h6 class="logAndSign"><a href="login">Already have an account? Log In</a></h6>
-                    <br>
-                    <button type="submit" class="btn btn-outline-primary" id="signupBtn">Create Account</button>
-                </form>
+            <div class="form-group">
+              <input name="passInput" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             </div>
-            <div class="col-md-2 col-lg-3">
-                <!-- Placeholder.-->
-            </div>
+            <br>
+            <h6 class="logAndSign"><a href="login">Already have an account? Log In</a></h6>
+            <br>
+            <button type="submit" class="btn" id="signupBtn">Create Account</button>
+          </form>
         </div>
+        {{!-- <div class="col-md-2 col-lg-3">
+          <!-- Placeholder.-->
+        </div> --}}
+      </div>
     </div>
-</div>
-</div>
-</div>
-<div class="bottom-banner">
-</div>
+  </div>
+</body>
