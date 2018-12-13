@@ -13,8 +13,10 @@
   <div class="top-banner d-flex align-items-center justify-content-left pl-3 pl-lg-5">
     <div>
       <h1 class="text-capitalize text-yellow text display-4">sell your stuff</h1>
-      <p class="text-muted w-50">With Things4Sale you can effortlessly get rid of the things you no longer need. Our user
-        friendly classifieds site allows you to easily post what you choose to sell and filter through things you'd like
+      <p class="text-muted w-50">With Things4Sale you can effortlessly get rid of the things you no longer need. Our
+        user
+        friendly classifieds site allows you to easily post what you choose to sell and filter through things you'd
+        like
         to buy. Things4Sale, it's in the name.
       </p>
     </div>
@@ -29,35 +31,43 @@
       <div class="col-10 col-md-5 col-lg-3 my-3 px-5 text-capitalize">
         <!-- categories -->
         <div class="products-categories-title mt-4 mb-4">
-          <h5 class="text-uppercase" alt="shop by categories">shop by categories</h5>
+          <h5 class="text-uppercase" alt="search by categories">search by categories</h5>
           <div class="products-categories-underline"></div>
         </div>
-        <a href="/index/Auto" class=" d-block products-categories-links">
-          <p class="mb-0">Auto</p>
+        <!-- single link -->
+        <a href="/index/Main" class=" d-block products-categories-links">
+          <p class="mb-0">all</p>
         </a>
         <!-- single link -->
-        <a href="/index/Books"  class=" d-block products-categories-links">
-          <p class="mb-0">Books</p>
+        <a href="/index/appliances" class=" d-block products-categories-links">
+          <p class="mb-0">appliances</p>
+        </a>
+        <a href="/index/auto" class=" d-block products-categories-links">
+          <p class="mb-0">auto</p>
         </a>
         <!-- single link -->
-        <a href="/index/Furniture" class=" d-block products-categories-links">
-          <p class="mb-0">furniture</p>
+        <a href="/index/books" class=" d-block products-categories-links">
+          <p class="mb-0">books</p>
         </a>
         <!-- single link -->
-        <a href="/index/Electronics" class=" d-block products-categories-links">
+        <a href="/index/electronics" class=" d-block products-categories-links">
           <p class="mb-0">electronics</p>
         </a>
         <!-- single link -->
-        <a href="/index/Instruments" class="d-block products-categories-links">
+        <a href="/index/furniture" class=" d-block products-categories-links">
+          <p class="mb-0">furniture</p>
+        </a>
+        <!-- single link -->
+        <a href="/index/instruments" class="d-block products-categories-links">
           <p class="mb-0">instruments</p>
         </a>
         <!-- single link -->
-        <a href="/index/Appliances" class=" d-block products-categories-links">
-          <p class="mb-0">appliances</p>
+        <a href="/index/jewelry" class=" d-block products-categories-links">
+          <p class="mb-0">jewelry</p>
         </a>
         <!-- single link -->
-        <a href="/index/Jewelry" class=" d-block products-categories-links">
-          <p class="mb-0">jewelry</p>
+        <a href="/index/toys" class=" d-block products-categories-links">
+          <p class="mb-0">toys</p>
         </a>
 
         <!-- create listing -->
@@ -71,29 +81,28 @@
         </div>
       </div>
       <!-- end of product info -->
+
       <!-- products  -->
       <div class="col-10 mx-auto col-md-7 col-lg-9 my-3">
         <div class="row p-3 justify-content-center">
 
           {{#each items}}
-
           <div class="card shadow m-3" style="width: 300px;">
             <img class="card-img-top" src="{{imageUrl}}" alt="image">
-            <span class="featured-search-icon" data-toggle="modal" data-target="#productModal">
-              <i class="fas fa-search"></i>
-            </span>
             <div class="card-body">
               <h5 class="card-title">{{title}}</h5>
               <p class="card-text">{{info}}</p>
               <p class="card-text">{{price}}</p>
+              <h5 class="card-title">Contact</h5>
+              <p class="card-text">{{user}}</p>
+              <h5 class="card-title">Location</h5>
+              <p class="card-text">{{zipCode}}</p>
             </div>
           </div>
-
           {{/each}}
-
+ 
         </div>
       </div>
-      <!-- end of products  -->
     </div>
   </div>
 </section>
@@ -107,12 +116,11 @@
 <!-- footer -->
 <footer class="footer">
   <div class="footer_container">
-
     <div>
       <h1 id="footer-logo">Things4Sale</h1>
     </div>
-
     <div class="footer-contact">
+  
       <!-- single contact -->
       <div>
         <h6 class="text-white text-muted">delivered to you by</h6>
@@ -120,43 +128,12 @@
       <!--end of single contact -->
       <h1 id="scramLogo">S.C.R.A.M.</h1>
     </div>
-
+  
     <!-- single icon -->
     <div>
       <h5 class="text-white">connect <a href="https://github.com/cm3z4/SCRAM-Project-2" target="_blank" class="footer-icon"><i
             class="fab fa-github"></i></a> | <span class="text-white small text-muted">copyright&copy;2018</span></h5>
     </div>
     <!-- end of single icon -->
-
   </div>
 </footer>
-
-<!-- Modal for featured listings -->
-<div class="modal fade" id="productModal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title text-capitalize">Item info</h5>
-        <button type="button" class="close" data-dismiss="modal">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="col text-center">
-            <img src="img/img-products/product-1.png" class="img-fluid" alt="">
-
-            <h3 class="text-left" id="itemTitle">Item name</h3>
-            <h5 class="text-left" id="itemPrice">price</h5>
-            <div class="text-left" id="itemDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-              maxime incidunt voluptatem delectus necessitatibus, facilis consequatur quidem excepturi dignissimos optio.</div>
-
-            <h5 class="text-left">contact</h5>
-            <div class="text-left" id="itemSeller">seller email</div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
