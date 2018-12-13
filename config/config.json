@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "pzg0x4fwt7apk69c",
-    "password": "lhk4ftfvsyn44wb5",
-    "database": "w87je08rry39gfal",
-    "host": "xefi550t7t6tjn36.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "username": "root",
+    "password": null,
+    "database": "things4sale_db",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
