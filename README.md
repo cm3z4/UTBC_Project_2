@@ -1,9 +1,20 @@
-# SCRAM---Project-2
-UTBC - Project 2
+# UTBC - Project 2
+## by S.C.R.A.M
 
-# Description
-A classified ad site. Free to post. Users post what they choose to sell, can share links to post, and filter by item categories (i.e. electronics, auto parts, household, jewelry, etc.)
+#### Description
+Things4Sale is a classified advertisements site. Free to create and search items for sale. Users can post items to sell or trade and filter by categories.
 
-Features for project built using Node, MySQL Database, Express Web Server, Handlebars and Sequelize.
+#### This project was built with the following technologies: 
+Node
+MySQL
+Express
+Handlebars
+Sequelize
+Express-fileupload - https://github.com/richardgirges/express-fileupload
 
-<a href="https://calm-anchorage-99433.herokuapp.com/"><img src="https://github.com/cm3z4/SCRAM-Project-2/blob/master/public/img/thingsforsale.png" alt="Things4Sale" style="width: 50%; height: 50%;"></a>
+#### Screenshots
+![](./public/img/screenshot1.png)
+
+![](./public/img/screenshot2.png)
+
+See it in action here on Heroku --> https://calm-anchorage-99433.herokuapp.com/login
