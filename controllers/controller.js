@@ -103,6 +103,7 @@ router.post("/users/createUser", function(req, res) {
     }
 });
 
+// Authenticate the user.
 let authUserEmail = "";
 router.post("/users/authUser", function(req, res) {
     models.users
