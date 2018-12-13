@@ -34,26 +34,6 @@ router.get("/signup", function(req, res) {
     res.render("signup");
 });
 
-// Renders the index page if the user has been authenticated.
-/*let userAuthenticated = false;
-router.get("/index", function(req, res) {
-    if (userAuthenticated === true) {
-        models.items
-            .findAll({
-                // blah, blah, blah...
-            })
-            .then(function(data) {
-                let hbsObject = { items: data };
-                res.render("index", hbsObject);
-            })
-            .catch(function(err) {
-                console.log(err);
-            });
-    } else {
-        res.redirect("/login");
-    }
-});*/
-
 // Renders the filter page if the user has been authenticated.
 let userAuthenticated = false;
 router.get("/index/:id", function(req, res) {
@@ -197,11 +177,11 @@ router.post("/upload", function(req, res) {
                 category: req.body.categoryInput,
                 info: req.body.infoInput,
                 zipCode: req.body.zipInput,
-                imageUrl: "uploads/" + imageId + ".jpg"
+                imageUrl: "../uploads/" + imageId + ".jpg"
             })
             .then(function() {
                 console.log("Info added to database!");
-                res.redirect("/index");
+                res.redirect("/index/Main");
             })
             .catch(function(err) {
                 console.log(err);
